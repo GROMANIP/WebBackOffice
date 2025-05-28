@@ -26,7 +26,7 @@ public class BasePageFc {
      * el 'driver' estático
      * WebDriverWait se usa para poner esperas explícitas en los elementos web
      */
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
     /*
      * Configura el WebDriver para Chrome usando WebDriverManager.
@@ -52,6 +52,11 @@ public class BasePageFc {
     // Método estático para navegar a una URL.
     public static void navigateTo(String url) {
         driver.get(url);
+    }
+
+    // Método estático para cerrar la instancia del driver.
+    public static void cerrarNavegador() {
+        driver.quit();
     }
 
         private WebElement encontrar(String locator) {

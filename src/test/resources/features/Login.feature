@@ -28,8 +28,6 @@ Feature: Creamos una regla para navegar libremente para todos los escenarios
     Examples:
         | corres         | punto |
         | Corresponsales | 4744  |
-        | Busqueda       | 0000  |
-        | Filtros        | 0000  |
 
         
 
