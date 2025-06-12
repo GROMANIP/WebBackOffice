@@ -29,5 +29,12 @@ Feature: Creamos una regla para navegar libremente para todos los escenarios
         | corres         | punto |
         | Corresponsales | 4744  |
 
+    @Usuariosfc
+    Scenario: Se valida busqueda de usuarios
+    When click en la opcion busqueda
+    #And seleccionamos la caja de texto
+    #Then escribimos el texto
+
+
         
 

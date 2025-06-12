@@ -2,6 +2,7 @@ package backofficefc.steps;
 
 
 import backofficefc.pages.Corresponsal;
+import backofficefc.pages.Usuarios;
 import backofficefc.pages.ImplementacionBackOffice;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -12,6 +13,7 @@ public class Testbackoffice {
 
     ImplementacionBackOffice login = new ImplementacionBackOffice();
     Corresponsal agente = new Corresponsal();
+    Usuarios user = new Usuarios();
 
 
     @Given("navego a la pagina de www.backoffice.com")
@@ -55,6 +57,13 @@ public class Testbackoffice {
     public void buscamosCorre(){
         agente.sourcePunto();
     }
+    //pruebas de busqueda de usuarios:
+    
+    @When("click en la opcion busqueda")
+    public void clickUser(){
+        user.selectUsusario();
+    }
+
 
 
 

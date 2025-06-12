@@ -59,10 +59,10 @@ public class BasePageFc {
         driver.quit();
     }
 
-        private WebElement encontrar(String locator) {
-        return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
-
+    private WebElement encontrar(String locator) {
+    return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
     }
+
 
     // click cuando encuentre al localizador
     public void clickElemento(String locator) {
