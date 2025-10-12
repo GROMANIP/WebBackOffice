@@ -9,12 +9,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+
 public class Testbackoffice {
 
     ImplementacionBackOffice login = new ImplementacionBackOffice();
     Corresponsal agente = new Corresponsal();
     Usuarios user = new Usuarios();
 
+    //INGRESAMOS AL BACKOFFICE
 
     @Given("navego a la pagina de www.backoffice.com")
     public void testPagina() {
@@ -35,6 +37,8 @@ public class Testbackoffice {
     public void clickIngresar(){
         login.ingresarBo();
     }
+    //PRUEBA DE BUSQUEDA DE CORRESPONSALES:
+
     @When("navegamos y selecciono la opcion de {word}")
     public void correSource(String corres){
         agente.clickCorresponsal(corres);
@@ -57,13 +61,29 @@ public class Testbackoffice {
     public void buscamosCorre(){
         agente.sourcePunto();
     }
-    //pruebas de busqueda de usuarios:
-    
-    @When("click en la opcion busqueda")
-    public void clickUser(){
-        user.selectUsusario();
+    //PRUEBA DE BUSQUEDA DE USUARIOS:
+    @When("selecciono la opcion de Corresponsales")
+    public void clickEnCorresponsal() {
+        user.clickCorresponsal();
     }
 
+    
+    @And("click en la alternativa {word}")
+    public void clickUser(String agente) {
+        user.selectUsusario();
+    }
+    
+    @And("escribimos el nombre de {word}")
+    public void digitoNombreUsuario(String id){
+        user.escribirNombre(id);
+    }
+
+    @Then("seleccionamos el usuario")
+    public void clickName(){
+        user.clickUserAgente();
+        System.out.println("ejecutado QA");
+   
+    }
 
 
 

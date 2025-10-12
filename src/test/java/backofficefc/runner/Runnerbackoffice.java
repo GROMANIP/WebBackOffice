@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = { "src\\test\\resources" }, glue = { "backofficefc.steps" }, plugin = { "pretty",
-        "html:target/cucumber-reports" }, tags = "@Navegar")
+        "html:target/cucumber-reports", "message:target/cucumber-messages.ndjson" }, tags = "@Navegar")
 
 public class Runnerbackoffice{
 

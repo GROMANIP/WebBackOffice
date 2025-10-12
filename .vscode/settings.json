@@ -10,5 +10,6 @@
     "java.compile.nullAnalysis.mode": "automatic",
     "terminal.integrated.detectLocale": "auto",
     "java.debug.settings.onBuildFailureProceed": true,
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "java.jdt.ls.java.home": ""
 }
