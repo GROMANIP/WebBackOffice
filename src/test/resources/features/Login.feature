@@ -14,11 +14,11 @@ Feature: Vamos a validar la mayoria de funcionalidades que tiene la Web del back
 
     @Corresponsalfc
     Scenario Outline: Validar busqueda de corresponsales
-    When navegamos y selecciono la opcion de <corres>
-    And click en busqueda
+    Given navegamos y selecciono la opcion de <corres>
+    When estemos en busqueda
     And click en filtrar
     And digitamos el punto <punto>
-    Then seleccionamos la opcion buscar
+    Then validamos la opcion buscar
     Examples:
         | corres         | punto |
         | Corresponsales | 4744  |
@@ -26,21 +26,19 @@ Feature: Vamos a validar la mayoria de funcionalidades que tiene la Web del back
 
     @Usuariosfc
     Scenario Outline: Se valida busqueda de usuarios
-    When selecciono la opcion de Corresponsales
-    And click en la alternativa <agentes>
-    And escribimos el nombre de <nombre>
-    Then seleccionamos el usuario
+    Given vamos en la alternativa <agentes>
+    When escribimos el nombre de <nombre>
+    Then validamos seleccionamos el usuario
     Examples:
          | agentes   | nombre |
-         | Ususarios | 123    |
+         | Usuarios  | 123    |
 
     @Terminalesfc
     Scenario Outline: Se valida busqueda de terminales y estado
-    When click en el menu de corresponsales
-    And click en la opcion <udid>
-    And escribimos el codigo de <terminal>
+    Given ingresamos en la opcion <udid>
+    When escribimos el codigo de <terminal>
     And seleccionamos el terminalfc
-    Then comparamos el estado del terminal
+    Then validamos el estado del terminal
     Examples:
          | udid       | terminal |
          | Terminales | 123      |
@@ -81,6 +79,40 @@ Feature: Vamos a validar la mayoria de funcionalidades que tiene la Web del back
     Examples:
     |fecha      | codigo|
     |01012025   | 4541  |
+
+    @Configuracion
+    Scenario Outline: Se valida que se almacene en una lista los resultados esperados de los agentes
+    Given estamos en la configuracion de agentes
+    When ingresemos a la opcion de alta de corresponsales
+    And ingresemos el codigo del <punto>
+    And click en el boton buscar
+    Then validamos si se almacena los resultados en la lista
+    Examples:
+    |punto|
+    |2    |
+    |897  |
+    |1    |
+    |456  |
+
+    @configuracionAltaAgente
+    Scenario Outline: Se valida alta de agente corresponsal
+    Given estamos en la configuracion de agentes
+    When ingresemos a la opcion de alta de corresponsales
+    And ingresemos el codigo del <punto>
+    And click en el boton buscar
+    Then validamos el alta del agente corresponsal
+    Examples:
+    |punto|
+    |8    |
+
+    @UsuarioAdmin
+    Scenario: Se validad los 3 campos texto para el registro de usuario admin
+    Given configuracion del backoffice
+    When ingresamos a la opcion Usuario Admin
+    And click en el boton añadir usuario
+    Then validamos escritura en los campos vacios del usuario a agregar
+
+
 
 
         

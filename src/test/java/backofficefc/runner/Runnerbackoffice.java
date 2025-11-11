@@ -7,21 +7,17 @@ import backofficefc.pages.BasePageFc;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
-
 @RunWith(Cucumber.class)
 @CucumberOptions(features = { "src\\test\\resources" }, glue = { "backofficefc.steps" }, plugin = { "pretty",
-        "html:target/cucumber-reports", "message:target/cucumber-messages.ndjson" }, tags = "@Navegar")
+        "html:target/cucumber-reports", "json:target/cucumber-report/cucumber.json" }, tags = "@Navegar" )
 
-public class Runnerbackoffice{
+public class Runnerbackoffice {
 
-@AfterClass
+    @AfterClass
     public static void cerrarGhrome() {
-    BasePageFc.cerrarNavegador();
+        BasePageFc.cerrarNavegador();
+        backofficefc.reports.GenerarReporte.main(null);
+
     }
 
 }
-
-
-
-    
-

@@ -1,6 +1,7 @@
 package backofficefc.pages;
 
 import java.time.Duration;
+import java.util.ArrayList;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +11,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.*;
 
 public class BasePageFc {
 
@@ -118,6 +118,14 @@ public class BasePageFc {
 
     public void popupTex() {
         driver.switchTo().alert().getText();
+    }
+
+    public ArrayList<String> listaElementos(String locator) {
+
+        ArrayList<String> nombre = new ArrayList<>();
+        nombre.add(comparar(locator));
+        return nombre;
+
     }
 
 }

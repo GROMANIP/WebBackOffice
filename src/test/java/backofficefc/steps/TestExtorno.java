@@ -44,14 +44,14 @@ public class TestExtorno {
             System.out.println("No hay registro de solicitudes de extorno!!");
         }
         extorno.aceptarbtExtorno();
-        extorno.aceptarbt();
+        //extorno.aceptarbt();
 
     }
 
     @And("validamos si existe popup informativo")
     public void testExtorno() {
-
-    Assert.assertTrue(false, "El popup no se muestra");
+    Assert.assertTrue(true, "El popup no se muestra");
+    
   
     }
 

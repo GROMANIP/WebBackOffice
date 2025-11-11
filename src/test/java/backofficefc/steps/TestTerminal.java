@@ -15,17 +15,12 @@ public class TestTerminal {
 
     Terminales terminal = new Terminales();
 
-    @When("click en el menu de corresponsales")
-    public void clickEnCorresponsal() {
-        terminal.clickCorresponsal();
-    }
-
-    @And("click en la opcion {word}")
+    @Given("ingresamos en la opcion {word}")
     public void clickDeviceTerminal(String udid) {
         terminal.selectTerminal();
     }
 
-    @And("escribimos el codigo de {word}")
+    @When("escribimos el codigo de {word}")
     public void digitarUdid(String cod) {
         terminal.escribirCodigo(cod);
     }
@@ -36,7 +31,7 @@ public class TestTerminal {
 
     }
 
-    @Then("comparamos el estado del terminal")
+    @Then("validamos el estado del terminal")
     public void compararEstadoUdid() {
         assertEquals("Vinculado", terminal.estadoTerminal());
         terminal.selectTerminal();
@@ -57,18 +52,20 @@ public class TestTerminal {
         terminal.saltarValoresDispositivo(valores);
 
     }
+
     @Then("selecionamos boton guardar")
-    public void ejecucionGuardarTerminal(){
+    public void ejecucionGuardarTerminal() {
         terminal.guardaValoresTerminal();
     }
+
     @And("mostrarme la popup exitoso y cerrar")
-    public void validacionPopup(){
-        //assertEquals("Debe rellenar todos los campos para continuar", terminal.retornarLocator());
-        //assertEquals(" Ya existe un dispositivo con el mismo udid", terminal.retornarLocator());
+    public void validacionPopup() {
+        // assertEquals("Debe rellenar todos los campos para continuar",
+        // terminal.retornarLocator());
+        // assertEquals(" Ya existe un dispositivo con el mismo udid",
+        // terminal.retornarLocator());
         assertEquals("El udid del dispositivo debe contener 16 carácteres", terminal.retornarLocator());
-        terminal.btAcepto(); //cerramos el popup
-
-
+        terminal.btAcepto(); // cerramos el popup
 
     }
 

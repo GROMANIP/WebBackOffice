@@ -5,14 +5,12 @@ import java.util.List;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 
-
 public class Terminales extends BasePageFc {
 
     public Terminales() {
         super(driver);
     }
 
-    private String opcionCorresponsal = "//*[@class='bm-icon icon-corresponsales']";
     private String opcionTerminal = "//li[normalize-space()='· Terminales']";
     private String escriboCodigo = "//input[@placeholder='Buscar por UDID de terminal']";
     private String clickTerminal = "//div[@ng-click='devices.goDevice(item.id)']";
@@ -22,13 +20,7 @@ public class Terminales extends BasePageFc {
     private String valoresNewDispositivo = "//input[@placeholder='Número de serie']";
     private String guardarDispositivo = "//button[contains(@class, 'ok-button') and contains(text(), 'Guardar')]";
     private String validamosPopup = "/html/body/div[4]/div/div[2]";
-    private String botonAceptar= "/html/body/div[4]/div/div[3]/button";
-
-    public void clickCorresponsal() {
-        // Reemplaza el marcador de posicion en recursoClick con nombre
-        clickElemento(opcionCorresponsal);
-
-    }
+    private String botonAceptar = "/html/body/div[4]/div/div[3]/button";
 
     public void selectTerminal() {
         clickElemento(opcionTerminal);
@@ -52,7 +44,7 @@ public class Terminales extends BasePageFc {
         clickElemento(botonNewDispositivo);
     }
 
-    //guardamos los valores en cada caja de texto
+    // guardamos los valores en cada caja de texto
     public void saltarValoresDispositivo(List<String> valores) {
         clickElemento(valoresNewDispositivo);
 
@@ -60,24 +52,24 @@ public class Terminales extends BasePageFc {
 
         for (String qa : valores) {
             actions.sendKeys(qa)
-            .sendKeys(Keys.TAB)
-            .perform();
+                    .sendKeys(Keys.TAB)
+                    .perform();
 
         }
 
     }
-    //guardamos los valores del nuevo dispositivo
-    public void guardaValoresTerminal(){
+
+    // guardamos los valores del nuevo dispositivo
+    public void guardaValoresTerminal() {
         clickElemento(guardarDispositivo);
-    }   
-    public String retornarLocator(){
+    }
+
+    public String retornarLocator() {
         return comparar(validamosPopup);
     }
 
-        public void btAcepto(){
+    public void btAcepto() {
         clickElemento(botonAceptar);
-    }   
-    
-
+    }
 
 }

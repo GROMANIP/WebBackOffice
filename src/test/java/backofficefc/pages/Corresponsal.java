@@ -23,7 +23,6 @@ public class Corresponsal extends BasePageFc {
 
         }
 
-        // TODO: handle exception
     }
 
     public void busear(){

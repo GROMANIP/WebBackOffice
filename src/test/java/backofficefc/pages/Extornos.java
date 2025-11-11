@@ -14,6 +14,8 @@ public class Extornos extends BasePageFc {
     private String regisExtor = "/html[1]/body[1]/ion-nav-view[1]/div[1]/div[2]/ion-nav-view[1]/ion-view[1]/ion-content[1]/div[1]/div[2]/div[2]/div[1]/div[5]";
     private String btAceptar = "/html/body/ion-nav-view/div/div[2]/ion-nav-view/ion-view/ion-content/div/div[2]/div[2]/div[2]/div[2]/button[1]";
     private String tituloPopup= "/html[1]/body[1]/div[4]/div[1]/div[1]/h3[1]";
+
+    
     public void opcionExtorno() {
         clickElemento(extor);
     }

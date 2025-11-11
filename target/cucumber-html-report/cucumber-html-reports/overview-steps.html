@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Reporte BackofficeFC</td>
+      <td>10 nov. 2025, 21:37</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">backofficefc.steps.TestConfiguracion.testAlmacenamiento()</td>
+              <td>4</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestConfiguracion.testAltaAgente()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestConfiguracion.testAltaCorresponsales()</td>
+              <td>5</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestConfiguracion.testBuscar()</td>
+              <td>5</td>
+              <td class="duration" data-value="6604140">0.006</td>
+              <td class="duration" data-value="6604140">0.015</td>
+              <td class="duration" data-value="33020700">0.033</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestConfiguracion.testConfiguracion()</td>
+              <td>5</td>
+              <td class="duration" data-value="10762623940">10.762</td>
+              <td class="duration" data-value="10762623940">10.844</td>
+              <td class="duration" data-value="53813119700">53.813</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestConfiguracion.testInsertPunto(java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="746200">0.000</td>
+              <td class="duration" data-value="746200">0.003</td>
+              <td class="duration" data-value="3731000">0.003</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestCorresponsal.buscamosCorre()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestCorresponsal.buscarBusqueda()</td>
+              <td>1</td>
+              <td class="duration" data-value="10810797500">10.810</td>
+              <td class="duration" data-value="10810797500">10.810</td>
+              <td class="duration" data-value="10810797500">10.810</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestCorresponsal.buscarFiltro()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestCorresponsal.buspunto(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestCorresponsal.correSource(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="10856234400">10.856</td>
+              <td class="duration" data-value="10856234400">10.856</td>
+              <td class="duration" data-value="10856234400">10.856</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestExtorno.testAgente(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestExtorno.testBuscar()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestExtorno.testExtorno()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestExtorno.testFecha(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="4482500">0.004</td>
+              <td class="duration" data-value="4482500">0.004</td>
+              <td class="duration" data-value="4482500">0.004</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestExtorno.testFiltro()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestExtorno.testOpcionExtorno()</td>
+              <td>1</td>
+              <td class="duration" data-value="10761994300">10.761</td>
+              <td class="duration" data-value="10761994300">10.761</td>
+              <td class="duration" data-value="10761994300">10.761</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestExtorno.testRegExtor()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestTerminal.clickCodigoUdid()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestTerminal.clickDeviceTerminal(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="10785679700">10.785</td>
+              <td class="duration" data-value="10785679700">10.785</td>
+              <td class="duration" data-value="10785679700">10.785</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestTerminal.compararEstadoUdid()</td>
+              <td>1</td>
+              <td class="duration" data-value="2018100">0.002</td>
+              <td class="duration" data-value="2018100">0.002</td>
+              <td class="duration" data-value="2018100">0.002</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestTerminal.digitarUdid(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestTerminal.ejecucionGuardarTerminal()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestTerminal.ingresarNuevoDispositivo()</td>
+              <td>1</td>
+              <td class="duration" data-value="10811824300">10.811</td>
+              <td class="duration" data-value="10811824300">10.811</td>
+              <td class="duration" data-value="10811824300">10.811</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestTerminal.ingresoValoresDispositivo(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestTerminal.validacionPopup()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestTransaccion.getclickfiltro()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestTransaccion.getclicktrasaccion()</td>
+              <td>1</td>
+              <td class="duration" data-value="10726254300">10.726</td>
+              <td class="duration" data-value="10726254300">10.726</td>
+              <td class="duration" data-value="10726254300">10.726</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestTransaccion.testBuscar()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestTransaccion.testCompareTx()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestTransaccion.testestado()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestTransaccion.testfecha(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestTransaccion.testpunto(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestUsuario.clickName()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestUsuario.clickUser(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="10718515200">10.718</td>
+              <td class="duration" data-value="10718515200">10.718</td>
+              <td class="duration" data-value="10718515200">10.718</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestUsuario.digitoNombreUsuario(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestUsuarioAdmin.testBtAddUser()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestUsuarioAdmin.testCamposText()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestUsuarioAdmin.testConfiguracion()</td>
+              <td>1</td>
+              <td class="duration" data-value="10774566100">10.774</td>
+              <td class="duration" data-value="10774566100">10.774</td>
+              <td class="duration" data-value="10774566100">10.774</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.TestUsuarioAdmin.testUsuarioAdmin()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.Testbackoffice.buscarClave(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="269987000">0.269</td>
+              <td class="duration" data-value="269987000">0.269</td>
+              <td class="duration" data-value="269987000">0.269</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.Testbackoffice.buscarUsuario(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="374001600">0.374</td>
+              <td class="duration" data-value="374001600">0.374</td>
+              <td class="duration" data-value="374001600">0.374</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.Testbackoffice.clickIngresar()</td>
+              <td>1</td>
+              <td class="duration" data-value="206718400">0.206</td>
+              <td class="duration" data-value="206718400">0.206</td>
+              <td class="duration" data-value="206718400">0.206</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">backofficefc.steps.Testbackoffice.testPagina()</td>
+              <td>1</td>
+              <td class="duration" data-value="26908052400">26.908</td>
+              <td class="duration" data-value="26908052400">26.908</td>
+              <td class="duration" data-value="26908052400">26.908</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>44</td>
+            <td>63</td>
+            <td class="duration">2.664</td>
+            <td class="duration">53.813</td>
+            <td class="duration">2:47.860</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
